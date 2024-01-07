@@ -1,12 +1,12 @@
 import { Handler } from "@netlify/functions";
-import chromium from "chrome-aws-lambda";
+import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
 
 const handler: Handler = async (event, context) => {
+  console.log("await chromium.executablePath", await chromium.executablePath());
   const browser = await puppeteer.launch({
     args: chromium.args,
-    executablePath:
-      process.env.CHROME_EXECUTABLE_PATH || (await chromium.executablePath),
+    executablePath: await chromium.executablePath(),
     headless: true,
   });
 
