@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@netlify/functions": "^2.4.1"
+    "@netlify/functions": "^2.4.1",
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.2.0"
   }
 }
